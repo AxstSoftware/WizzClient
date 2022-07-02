@@ -13,19 +13,19 @@ buildscript {
 	}
 }
 
-apply plugin: 'net.minecraftforge.gradle.tweaker-client'
 apply plugin: 'kotlin'
-apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'java'
+apply plugin: 'net.minecraftforge.gradle.tweaker-client'
+apply plugin: 'org.spongepowered.mixin'
 
-String tweakerClass = 'io.github.axst.launch.TCLTweaker'
-String tweaker = 'mixins.tcl'
+String tweakerClass = 'io.github.axst.launch.WizzTweaker'
+String tweaker = 'mixins.wizzclient'
 
 compileJava {
 	sourceCompatibility = targetCompatibility = 8
 }
 
-version '1.8.9'
+version '0.1.0'
 group 'io.github.axst'
 
 minecraft {
@@ -59,15 +59,16 @@ configurations {
 }
 
 dependencies {
-	compileOnly('org.projectlombok:lombok:1.18.24')
-	annotationProcessor('org.projectlombok:lombok:1.18.24')
 	tclmdk('org.spongepowered:mixin:0.7.11-SNAPSHOT') {
 		exclude module: 'launchwrapper'
 		exclude module: 'guava'
 		exclude module: 'gson'
 		exclude module: 'commons-io'
 	}
-	tclmdk("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
+	compileOnly('org.projectlombok:lombok:1.18.24')
+	annotationProcessor('org.projectlombok:lombok:1.18.24')
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
+	annotationProcessor("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
 }
 
 processResources {
