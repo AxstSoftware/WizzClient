@@ -1,12 +1,13 @@
 {
-	"required": true,
-	"minVersion": "0.6",
-	"compatibilityLevel": "JAVA_8",
-	"package": "io.github.axst.mixins",
-	"refmap": "mixins.wizzclient.refmap.json",
-	"target": "@env(DEFAULT)",
-	"verbose": true,
-	"mixins": [
-		"MinecraftMixins"
-	]
+  "required": true,
+  "minVersion": "0.6",
+  "compatibilityLevel": "JAVA_8",
+  "package": "io.github.axst.mixins",
+  "refmap": "mixins.wizzclient.refmap.json",
+  "target": "@env(DEFAULT)",
+  "verbose": true,
+  "mixins": [
+    "GuiIngameMixins",
+    "MinecraftMixins"
+  ]
 }
