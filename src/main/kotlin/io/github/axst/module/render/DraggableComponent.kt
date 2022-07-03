@@ -2,12 +2,7 @@ package io.github.axst.module.render
 
 import org.lwjgl.input.Mouse
 
-class DraggableComponent(
-    var x: Int,
-    var y: Int,
-    private val widthIn: Int,
-    private val heightIn: Int
-) {
+class DraggableComponent(var x: Int, var y: Int, private val widthIn: Int, private val heightIn: Int) {
 
     var lastX = 0
     var lastY = 0

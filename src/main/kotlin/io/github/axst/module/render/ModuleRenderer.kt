@@ -10,10 +10,11 @@ abstract class ModuleRenderer(name: String, description: String, x: Int, y: Int)
     private var draggableComponent: DraggableComponent
 
     private var widthIn: Int = 0
+
     private var heightIn: Int = 0
 
     init {
-        this.draggableComponent = DraggableComponent(x, y, this.getWidthIn(), this.getHeightIn())
+        draggableComponent = DraggableComponent(x, y, this.getWidthIn(), this.getHeightIn())
     }
 
     abstract fun drawOverlayModule()
@@ -47,10 +48,10 @@ abstract class ModuleRenderer(name: String, description: String, x: Int, y: Int)
     }
 
     protected fun getX(): Int {
-        return draggableComponent!!.x
+        return draggableComponent.x
     }
 
     protected fun getY(): Int {
-        return draggableComponent!!.y
+        return draggableComponent.y
     }
 }
