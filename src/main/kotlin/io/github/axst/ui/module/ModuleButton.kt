@@ -20,7 +20,7 @@ class ModuleButton(private val x: Int, private val y: Int, private val widthIn: 
             (y + heightIn - 18 / 2 - IWizz.font.FONT_HEIGHT / 2).toFloat(),
             -1
         )
-        RenderUtils.drawSmoothRoundedRect(RenderUtils(), + widthIn - 120, y + 98, x + widthIn, y + heightIn, 14, getColor())
+        RenderUtils.drawSmoothRoundedRect(RenderUtils(), x + widthIn - 120, y + 98, x + widthIn, y + heightIn, 14, getColor())
     }
 
     private fun getColor(): Int {
@@ -33,7 +33,7 @@ class ModuleButton(private val x: Int, private val y: Int, private val widthIn: 
 
     fun onClick(mouseX: Int, mouseY: Int, button: Int) {
         if (mouseX >= x + widthIn - 120 && mouseX <= x + widthIn && mouseY >= y + 94 && mouseY <= y + heightIn) {
-            mod!!.toggleModule()
+            if(button == 1) mod!!.toggleModule()
         }
     }
 }

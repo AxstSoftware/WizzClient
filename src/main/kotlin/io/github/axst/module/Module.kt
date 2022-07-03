@@ -25,7 +25,7 @@ open class Module(name: String, description: String) {
     }
 
     fun toggleModule() {
-        setEnabled(!isEnabled())
+        this.enabled = !this.enabled
     }
 
     fun isEnabled(): Boolean {
