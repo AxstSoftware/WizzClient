@@ -26,9 +26,17 @@ abstract class ModuleRenderer(name: String, description: String, x: Int, y: Int)
     open fun drawScreenModule(mouseX: Int, mouseY: Int) {
         val hovered = mouseX >= this.getX() && mouseX <= this.getX() + this.getWidthIn() && mouseY >= this.getY() && mouseY <= this.getY() + this.getHeightIn()
         if (hovered) RenderUtils.drawHollowRect(
-            this.getX() - 2,
+            RenderUtils(), this.getX() - 2,
             this.getY() - 2,
             this.getWidthIn() + 3,
+            this.getHeightIn() + 2,
+            Color(0, 204, 255, 152).rgb
+        )
+
+        if (hovered) RenderUtils.drawHollowRect(
+            RenderUtils(), this.getX() - 2,
+            this.getY() + 2,
+            this.getWidthIn() - 3,
             this.getHeightIn() + 2,
             Color(0, 204, 255, 152).rgb
         )
