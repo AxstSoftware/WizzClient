@@ -8,12 +8,13 @@ import org.lwjgl.input.Keyboard
 class Keybinding {
     companion object : IWizz {
         val OPEN_HUD: KeyBinding = KeyBinding("Open Hud Menu", Keyboard.KEY_RSHIFT, "Wizz Client")
+        val OPEN_MANAGER: KeyBinding = KeyBinding("Open Manager Menu", Keyboard.KEY_R, "Wizz Client")
 
         init {
-            register(OPEN_HUD)
+            register(OPEN_HUD, OPEN_MANAGER)
         }
-        private fun register(key: KeyBinding) {
-            gameSettings.keyBindings = ArrayUtils.add(gameSettings.keyBindings, key)
+        private fun register(vararg key: KeyBinding) {
+            gameSettings.keyBindings = ArrayUtils.addAll(gameSettings.keyBindings, *key)
         }
     }
 }

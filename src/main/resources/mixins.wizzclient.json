@@ -7,7 +7,8 @@
   "target": "@env(DEFAULT)",
   "verbose": true,
   "mixins": [
-    "GuiIngameMixins",
-    "MinecraftMixins"
+    "ui.GuiIngameMixins",
+    "ui.GuiMainMenuMixins",
+    "client.MinecraftMixins"
   ]
 }

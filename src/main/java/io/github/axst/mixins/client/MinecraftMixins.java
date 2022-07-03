@@ -1,7 +1,8 @@
-package io.github.axst.mixins;
+package io.github.axst.mixins.client;
 
 import io.github.axst.WizzCore;
-import io.github.axst.ui.HudScreen;
+import io.github.axst.ui.module.FrameGui;
+import io.github.axst.ui.module.HudScreen;
 import io.github.axst.utils.IWizz;
 import io.github.axst.utils.Keybinding;
 import net.minecraft.client.Minecraft;
@@ -21,5 +22,6 @@ public class MinecraftMixins {
     @Inject(method = "runTick", at = @At(value = "INVOKE", target = "Lorg/lwjgl/input/Keyboard;next()Z"))
     public void injectRuntTuck2(final CallbackInfo ci) {
         if(Keybinding.Companion.getOPEN_HUD().isPressed()) IWizz.Companion.getMinecraft().displayGuiScreen(new HudScreen());
+        if(Keybinding.Companion.getOPEN_MANAGER().isPressed()) IWizz.Companion.getMinecraft().displayGuiScreen(new FrameGui());
     }
 }

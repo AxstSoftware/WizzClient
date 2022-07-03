@@ -1,4 +1,4 @@
-package io.github.axst.ui
+package io.github.axst.ui.module
 
 import io.github.axst.module.render.ModuleRenderer
 import net.minecraft.client.gui.GuiScreen

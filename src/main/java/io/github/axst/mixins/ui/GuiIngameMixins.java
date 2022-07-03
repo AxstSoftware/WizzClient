@@ -1,4 +1,4 @@
-package io.github.axst.mixins;
+package io.github.axst.mixins.ui;
 
 import io.github.axst.WizzCore;
 import net.minecraft.client.gui.GuiIngame;
