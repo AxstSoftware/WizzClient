@@ -10,11 +10,11 @@ class WizzCore {
         val instance: WizzCore = WizzCore()
     }
 
-    var moduleManager: ModuleManager? = null
+    lateinit var moduleManager: ModuleManager
 
     fun initializeClient() {
-        moduleManager = ModuleManager()
         println("My First Injection!")
         DiscordWebhook.sendMessage("HELLO")
+        moduleManager = ModuleManager()
     }
 }

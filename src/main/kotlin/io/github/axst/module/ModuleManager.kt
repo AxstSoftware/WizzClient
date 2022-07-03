@@ -6,14 +6,14 @@ import io.github.axst.module.render.ModuleRenderer
 
 class ModuleManager {
 
-    private var module: ArrayList<Module>? = ArrayList()
+    private var module: ArrayList<Module> = ArrayList()
 
     init {
-        module!!.add(TestModule())
-        module!!.add(RenderModule())
+        module.add(TestModule())
+        module.add(RenderModule())
     }
 
     fun renderHooks() {
-        module!!.forEach { module: Module -> if (module.isEnabled() && module is ModuleRenderer) module.drawOverlayModule() }
+        module.forEach { module: Module -> if (module.isEnabled() && module is ModuleRenderer) module.drawOverlayModule() }
     }
 }

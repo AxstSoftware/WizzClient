@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(Minecraft.class)
 public class MinecraftMixins {
 
-    @Inject(method = "startGame", at = @At(value = "HEAD", shift = At.Shift.AFTER))
+    @Inject(method = "startGame", at = @At(value = "RETURN"))
     public void injectStartGame(CallbackInfo ci) {
         WizzCore.getInstance().initializeClient();
     }
