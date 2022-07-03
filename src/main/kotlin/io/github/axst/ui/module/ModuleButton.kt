@@ -1,5 +1,6 @@
 package io.github.axst.ui.module
 
+import io.github.axst.WizzCore
 import io.github.axst.module.Module
 import io.github.axst.utils.IWizz
 import io.github.axst.utils.RenderUtils
@@ -34,6 +35,7 @@ class ModuleButton(private val x: Int, private val y: Int, private val widthIn: 
     fun onClick(mouseX: Int, mouseY: Int, button: Int) {
         if (mouseX >= x + widthIn - 120 && mouseX <= x + widthIn && mouseY >= y + 94 && mouseY <= y + heightIn) {
             if(button == 1) mod!!.toggleModule()
+            else if (button == 0) WizzCore.instance.frameGui.frameBase!!.setType(FrameType.TEST, mod!!)
         }
     }
 }
