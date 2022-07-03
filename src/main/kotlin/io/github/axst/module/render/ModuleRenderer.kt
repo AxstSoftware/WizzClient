@@ -34,6 +34,22 @@ abstract class ModuleRenderer(name: String, description: String, x: Int, y: Int)
         )
     }
 
+    open fun getWidthIn(): Int {
+        return widthIn
+    }
+
+    open fun getHeightIn(): Int {
+        return heightIn
+    }
+
+    protected fun getX(): Int {
+        return draggableComponent.x
+    }
+
+    protected fun getY(): Int {
+        return draggableComponent.y
+    }
+
     companion object {
         private var lastDraggedMod = 0
         fun renderComponent(mouseX: Int, mouseY: Int) {
@@ -59,21 +75,5 @@ abstract class ModuleRenderer(name: String, description: String, x: Int, y: Int)
                 }
             }
         }
-    }
-
-    open fun getWidthIn(): Int {
-        return widthIn
-    }
-
-    open fun getHeightIn(): Int {
-        return heightIn
-    }
-
-    protected fun getX(): Int {
-        return draggableComponent.x
-    }
-
-    protected fun getY(): Int {
-        return draggableComponent.y
     }
 }
