@@ -1,30 +1,38 @@
 package io.github.axst.module
 
-import io.github.axst.utils.IHelper
+import io.github.axst.module.settings.Settings
+import java.util.*
 
-open class Module(name: String, description: String) : IHelper{
+open class Module(name: String, description: String) {
 
-    var name: String?
+    var name: String
 
-    private var description: String?
+    private var description: String
 
-    var enabled: Boolean?
+    private var enabled: Boolean
+
+    private val settings: ArrayList<Settings>
 
     init {
         this.name = name
         this.description = description
         this.enabled = true
+        settings = ArrayList()
     }
 
-    open fun toggleModule() {
+    fun addSettings(vararg toAdd: Settings) {
+        settings.addAll(listOf(*toAdd))
+    }
+
+    fun toggleModule() {
         setEnabled(!isEnabled())
     }
 
-    open fun isEnabled(): Boolean {
-        return enabled!!
+    fun isEnabled(): Boolean {
+        return enabled
     }
 
-    open fun setEnabled(enabled: Boolean) {
+    private fun setEnabled(enabled: Boolean) {
         this.enabled = enabled
     }
 }

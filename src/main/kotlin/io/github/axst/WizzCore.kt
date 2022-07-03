@@ -2,6 +2,7 @@ package io.github.axst
 
 import io.github.axst.module.ModuleManager
 import io.github.axst.utils.DiscordWebhook
+import io.github.axst.utils.Keybinding
 
 class WizzCore {
 
@@ -13,8 +14,8 @@ class WizzCore {
     lateinit var moduleManager: ModuleManager
 
     fun initializeClient() {
-        println("My First Injection!")
-        DiscordWebhook.sendMessage("HELLO")
         moduleManager = ModuleManager()
+        Keybinding()
+        DiscordWebhook.sendMessage("HELLO")
     }
 }

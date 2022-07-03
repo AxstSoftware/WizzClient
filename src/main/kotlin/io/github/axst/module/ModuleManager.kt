@@ -6,7 +6,7 @@ import io.github.axst.module.render.ModuleRenderer
 
 class ModuleManager {
 
-    private var module: ArrayList<Module> = ArrayList()
+    var module: ArrayList<Module> = ArrayList()
 
     init {
         module.add(TestModule())
