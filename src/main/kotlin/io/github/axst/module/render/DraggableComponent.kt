@@ -4,9 +4,9 @@ import org.lwjgl.input.Mouse
 
 class DraggableComponent(var x: Int, var y: Int, private val widthIn: Int, private val heightIn: Int) {
 
-    var lastX = 0
-    var lastY = 0
-    var draggingModule = false
+    private var lastX = 0
+    private var lastY = 0
+    private var draggingModule = false
 
     fun isDraggingModule(mouseX: Int, mouseY: Int): Boolean {
         if (draggingModule) {
