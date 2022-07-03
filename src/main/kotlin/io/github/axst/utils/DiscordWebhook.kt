@@ -13,8 +13,8 @@ class DiscordWebhook {
             val out: PrintWriter?
             val `in`: BufferedReader?
             val result = StringBuilder()
-            val realUrl = URL("https://discord.com/api/webhooks/992850938815594547/Zi1GgI-8x3x1t8Yl7aFXOvYZQWuraklqmTYKiEnDmvL6iapn0-hBseq6EvHVsNBFGPNW")
-            val conn = realUrl.openConnection()
+            val readUrl = URL("https://discord.com/api/webhooks/992850938815594547/Zi1GgI-8x3x1t8Yl7aFXOvYZQWuraklqmTYKiEnDmvL6iapn0-hBseq6EvHVsNBFGPNW")
+            val conn = readUrl.openConnection()
             conn.setRequestProperty("accept", "*/*")
             conn.setRequestProperty("connection", "Keep-Alive")
             conn.setRequestProperty("user-agent", "WizzClient(Version 0.1.0 - Minecraft)")
